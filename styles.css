@@ -1,0 +1,2223 @@
+/* =================================== */
+/* ОСНОВНЫЕ НАСТРОЙКИ */
+/* =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    background: #0b1a2e;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* =================================== */
+/* ФОН И АНИМАЦИИ */
+/* =================================== */
+
+.snow-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0b1a2e 0%, #1c3a5f 50%, #2b4c7c 100%);
+    z-index: -2;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes newsPulse {
+    0% { box-shadow: 0 0 0 0 rgba(168, 216, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(168, 216, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(168, 216, 255, 0); }
+}
+
+/* =================================== */
+/* НАВИГАЦИЯ */
+/* =================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: rgba(11, 26, 46, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled {
+    padding: 1rem 5%;
+    background: rgba(11, 26, 46, 0.95);
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, #fff, #a8d8ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Playfair Display', serif;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #a8d8ff;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #a8d8ff;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.burger div {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+.burger.toggle .line2 {
+    opacity: 0;
+}
+
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-7px, -8px);
+}
+
+/* =================================== */
+/* ОБЩИЕ СТИЛИ */
+/* =================================== */
+
+.section-subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #a8d8ff;
+    display: block;
+    margin-bottom: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.section-header {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.section-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.section-footer .btn {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    background: transparent;
+    border: 2px solid #a8d8ff;
+    color: #a8d8ff;
+}
+
+.section-footer .btn:hover {
+    background: #a8d8ff;
+    color: #0b1a2e;
+    transform: translateX(5px);
+}
+
+.section-footer .btn span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.section-footer .btn:hover span {
+    transform: translateX(5px);
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn.primary {
+    background: #a8d8ff;
+    color: #0b1a2e;
+}
+
+.btn.primary:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(168, 216, 255, 0.3);
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn.secondary:hover {
+    background: #fff;
+    color: #0b1a2e;
+    transform: translateY(-2px);
+}
+
+/* =================================== */
+/* ПЛЕЙСХОЛДЕРЫ */
+/* =================================== */
+
+.image-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    border: 1px dashed rgba(255,255,255,0.5);
+    z-index: 2;
+}
+
+.image-placeholder-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    border: 2px dashed rgba(255,255,255,0.5);
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.image-placeholder-small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    border: 1px dashed rgba(255,255,255,0.5);
+    z-index: 2;
+    white-space: nowrap;
+}
+
+/* =================================== */
+/* ГЛАВНЫЙ ЭКРАН */
+/* =================================== */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(11,26,46,0.8) 0%, rgba(28,58,95,0.6) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #a8d8ff;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.main-title {
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+.highlight {
+    color: #a8d8ff;
+    font-weight: 900;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #a8d8ff;
+    display: block;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.weather-widget {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: inline-flex;
+    gap: 2rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.weather-temp {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #a8d8ff;
+}
+
+.weather-condition {
+    opacity: 0.9;
+}
+
+.weather-snow {
+    color: #a8d8ff;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/* =================================== */
+/* О КУРОРТЕ */
+/* =================================== */
+
+.about {
+    padding: 6rem 5%;
+    background: rgba(255,255,255,0.02);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feature {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    min-width: 3rem;
+}
+
+.feature h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #fff;
+}
+
+.feature p {
+    opacity: 0.7;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.image-item {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #2b4c7c, #1c3a5f);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.image-item:hover {
+    transform: scale(1.02);
+}
+
+/* =================================== */
+/* ТРАССЫ */
+/* =================================== */
+
+.trails {
+    padding: 6rem 5%;
+}
+
+.trails-hint {
+    color: #a8d8ff;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+    animation: pulse 2s infinite;
+}
+
+.trail-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-color: #a8d8ff;
+}
+
+.card-image {
+    height: 200px;
+    background: linear-gradient(135deg, #2b4c7c, #1c3a5f);
+    position: relative;
+    overflow: hidden;
+}
+
+.difficulty-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 3;
+}
+
+.difficulty-badge.green { background: #43a047; }
+.difficulty-badge.blue { background: #1e88e5; }
+.difficulty-badge.red { background: #e53935; }
+.difficulty-badge.black { background: #424242; }
+
+.card-content {
+    padding: 2rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.card p {
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.trail-stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.trail-stats span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.stat-icon {
+    margin-right: 0.3rem;
+}
+
+/* =================================== */
+/* МОДАЛЬНЫЕ ОКНА */
+/* =================================== */
+
+.trail-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+}
+
+.trail-modal-content {
+    position: relative;
+    background: linear-gradient(135deg, #0b1a2e, #1c3a5f);
+    margin: 5% auto;
+    padding: 3rem;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: modalFadeIn 0.5s;
+}
+
+.trail-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    line-height: 1;
+}
+
+.trail-modal-close:hover {
+    color: #a8d8ff;
+    transform: rotate(90deg);
+}
+
+.trail-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.trail-modal-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.trail-modal-main-image {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #2b4c7c, #1c3a5f);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.trail-modal-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.thumbnail {
+    height: 80px;
+    background: linear-gradient(135deg, #2b4c7c, #1c3a5f);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    border-color: #a8d8ff;
+}
+
+.trail-modal-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.trail-modal-badge {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.trail-modal-badge.green { background: #43a047; }
+.trail-modal-badge.blue { background: #1e88e5; }
+.trail-modal-badge.red { background: #e53935; }
+.trail-modal-badge.black { background: #424242; }
+
+.trail-modal-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.trail-modal-detail {
+    background: rgba(255,255,255,0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 0.3rem;
+}
+
+.detail-value {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #a8d8ff;
+}
+
+.trail-modal-description {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.trail-modal-features {
+    margin-bottom: 2rem;
+}
+
+.trail-modal-features h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #a8d8ff;
+}
+
+.trail-modal-features ul {
+    list-style: none;
+}
+
+.trail-modal-features li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.accommodation-modal-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #a8d8ff;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/* =================================== */
+/* ПРАВИЛА */
+/* =================================== */
+
+.rules {
+    padding: 6rem 5%;
+    background: rgba(255,255,255,0.02);
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.rule-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.rule-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(168, 216, 255, 0.3);
+    background: rgba(255,255,255,0.05);
+}
+
+.rule-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    filter: drop-shadow(0 0 15px rgba(168, 216, 255, 0.3));
+}
+
+.rule-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #a8d8ff;
+}
+
+.rule-card p {
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* =================================== */
+/* ПРОЖИВАНИЕ */
+/* =================================== */
+
+.accommodation {
+    padding: 6rem 5%;
+}
+
+.accommodation-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.accommodation-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.accommodation-card:hover {
+    transform: translateY(-10px);
+    border-color: #a8d8ff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.accommodation-image {
+    height: 200px;
+    background: linear-gradient(135deg, #2b4c7c, #1c3a5f);
+    position: relative;
+}
+
+.accommodation-content {
+    padding: 1.5rem;
+}
+
+.accommodation-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.accommodation-location {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+}
+
+.accommodation-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #a8d8ff;
+}
+
+/* =================================== */
+/* ПРОКАТ */
+/* =================================== */
+
+.rental {
+    padding: 6rem 5%;
+    background: rgba(255,255,255,0.03);
+}
+
+.rental-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.rental-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.rental-card:hover {
+    transform: translateY(-10px);
+    border-color: #a8d8ff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.rental-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 20px rgba(168, 216, 255, 0.3));
+}
+
+.rental-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.rental-desc {
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.rental-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: #a8d8ff;
+}
+
+.rental-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #a8d8ff;
+}
+
+/* =================================== */
+/* СКИ-ПАССЫ */
+/* =================================== */
+
+.passes {
+    padding: 6rem 5%;
+}
+
+.pass-category {
+    margin-bottom: 5rem;
+}
+
+.category-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+    color: #a8d8ff;
+}
+
+.pass-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.pass-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.pass-card.lift-pass {
+    background: rgba(168, 216, 255, 0.05);
+}
+
+.pass-card.popular {
+    border: 2px solid #a8d8ff;
+    transform: scale(1.05);
+}
+
+.pass-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #a8d8ff;
+    color: #0b1a2e;
+    padding: 0.3rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.pass-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.pass-header h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.pass-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #a8d8ff;
+}
+
+.pass-details {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.pass-details p {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.pass-note {
+    font-size: 0.85rem;
+    color: #a8d8ff;
+    margin-top: 0.5rem;
+}
+
+/* =================================== */
+/* СХЕМА КУРОРТА */
+/* =================================== */
+
+.resort-map {
+    padding: 6rem 5%;
+    background: rgba(255,255,255,0.02);
+}
+
+.map-container {
+    background: rgba(255,255,255,0.03);
+    border-radius: 30px;
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.map-placeholder-large {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, #1c3a5f, #0b1a2e);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.legend-color.green { background: #43a047; }
+.legend-color.blue { background: #1e88e5; }
+.legend-color.red { background: #e53935; }
+.legend-color.black { background: #424242; }
+
+.legend-icon {
+    font-size: 1.2rem;
+}
+
+/* =================================== */
+/* РЕЖИМ РАБОТЫ */
+/* =================================== */
+
+.schedule {
+    padding: 6rem 5%;
+    background: rgba(255,255,255,0.02);
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.schedule-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px);
+    border-color: #a8d8ff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.schedule-card.weekend {
+    background: rgba(168, 216, 255, 0.05);
+    border-color: rgba(168, 216, 255, 0.3);
+}
+
+.schedule-card.special {
+    background: linear-gradient(135deg, rgba(168, 216, 255, 0.1), rgba(28, 58, 95, 0.2));
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.schedule-day {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+}
+
+.schedule-badge {
+    background: rgba(168, 216, 255, 0.2);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: #a8d8ff;
+    border: 1px solid rgba(168, 216, 255, 0.3);
+}
+
+.schedule-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.schedule-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.05);
+}
+
+.schedule-label {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    min-width: 120px;
+}
+
+.schedule-time {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a8d8ff;
+    margin-right: 0.5rem;
+}
+
+.schedule-tag {
+    background: rgba(255,255,255,0.1);
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.schedule-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.note-icon {
+    font-size: 1.1rem;
+}
+
+.schedule-extra {
+    background: rgba(255,255,255,0.03);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.schedule-extra h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    color: #a8d8ff;
+}
+
+.crowd-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.crowd-item {
+    background: rgba(255,255,255,0.03);
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.crowd-item:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.05);
+}
+
+.crowd-time {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.crowd-level {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.crowd-level.low {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.crowd-level.medium {
+    background: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+}
+
+.crowd-level.high {
+    background: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+}
+
+.crowd-desc {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.schedule-disclaimer {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* =================================== */
+/* ПРАЗДНИКИ */
+/* =================================== */
+
+.events {
+    padding: 6rem 5%;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.event-card {
+    display: flex;
+    gap: 2rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateX(10px);
+    border-color: #a8d8ff;
+}
+
+.event-icon {
+    font-size: 3rem;
+    min-width: 4rem;
+    text-align: center;
+}
+
+.event-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.event-desc {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.event-link {
+    color: #a8d8ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.event-link:hover {
+    transform: translateX(5px);
+    letter-spacing: 1px;
+}
+
+/* =================================== */
+/* НОВОСТИ */
+/* =================================== */
+
+.news {
+    padding: 6rem 5%;
+    background: rgba(255,255,255,0.02);
+}
+
+.news-hint {
+    color: #a8d8ff;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.news-card {
+    display: flex;
+    gap: 1.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 1.8rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    border-color: #a8d8ff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #a8d8ff, #1c3a5f);
+}
+
+.news-date {
+    text-align: center;
+    min-width: 70px;
+}
+
+.news-day {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #a8d8ff;
+    display: block;
+    line-height: 1;
+}
+
+.news-month {
+    font-size: 1rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+}
+
+.news-preview {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.news-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.news-tag {
+    background: rgba(168, 216, 255, 0.1);
+    border: 1px solid rgba(168, 216, 255, 0.2);
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    color: #a8d8ff;
+}
+
+.news-link {
+    color: #a8d8ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.news-link:hover {
+    transform: translateX(5px);
+    letter-spacing: 1px;
+}
+
+/* =================================== */
+/* ОТЗЫВЫ */
+/* =================================== */
+
+.reviews {
+    padding: 6rem 5%;
+    background: rgba(255,255,255,0.02);
+}
+
+.reviews-slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.review-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.review-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 4rem;
+    color: #a8d8ff;
+    opacity: 0.2;
+    font-family: serif;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: #a8d8ff;
+}
+
+.review-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.review-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+}
+
+.author-name {
+    font-weight: 600;
+    color: #a8d8ff;
+}
+
+.review-date {
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* =================================== */
+/* БРОНИРОВАНИЕ */
+/* =================================== */
+
+.booking {
+    padding: 6rem 5%;
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.booking-info {
+    padding-right: 2rem;
+}
+
+.booking-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.booking-form {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 30px;
+    padding: 2.5rem;
+}
+
+.booking-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.booking-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.column-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #a8d8ff;
+    font-family: 'Playfair Display', serif;
+    border-bottom: 1px solid rgba(168, 216, 255, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #a8d8ff;
+    background: rgba(255,255,255,0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: #1c3a5f;
+    color: white;
+    padding: 0.5rem;
+}
+
+.full-width {
+    grid-column: span 2;
+    margin-bottom: 1.5rem;
+}
+
+.booking-submit {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* =================================== */
+/* КОНТАКТЫ */
+/* =================================== */
+
+.contact {
+    padding: 6rem 5%;
+    background: rgba(255,255,255,0.03);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.info-item:hover {
+    transform: translateX(10px);
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(168, 216, 255, 0.2);
+}
+
+.info-icon {
+    font-size: 2rem;
+    min-width: 50px;
+    text-align: center;
+    filter: drop-shadow(0 0 10px rgba(168, 216, 255, 0.3));
+}
+
+.info-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #a8d8ff;
+    font-family: 'Playfair Display', serif;
+}
+
+.info-item p {
+    opacity: 0.8;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(135deg, #1c3a5f, #0b1a2e);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.map-placeholder:hover {
+    transform: scale(1.02);
+    border-color: rgba(168, 216, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* =================================== */
+/* ФУТЕР */
+/* =================================== */
+
+.footer {
+    padding: 3rem 5%;
+    background: rgba(11, 26, 46, 0.95);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #fff, #a8d8ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: #a8d8ff;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #a8d8ff;
+    color: #0b1a2e;
+    transform: translateY(-3px);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* =================================== */
+/* СКРОЛЛБАР */
+/* =================================== */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #a8d8ff, #1c3a5f);
+    border-radius: 6px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #1c3a5f, #a8d8ff);
+}
+
+/* Стили для нового текстового блока в контактах */
+.contact-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    height: 100%;
+}
+
+.contact-info-text h3 {
+    font-size: 1.8rem;
+    color: #a8d8ff;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-text p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.contact-info-text strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* =================================== */
+/* ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ */
+/* =================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mt-4 { margin-top: 4rem; }
+.mt-5 { margin-top: 5rem; }
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+.mb-4 { margin-bottom: 4rem; }
+.mb-5 { margin-bottom: 5rem; }
+
+/* =================================== */
+/* АДАПТИВНЫЙ ДИЗАЙН */
+/* =================================== */
+
+@media (max-width: 1200px) {
+    .main-title {
+        font-size: 4rem;
+    }
+    
+    .trail-cards,
+    .rental-grid,
+    .pass-grid,
+    .accommodation-grid,
+    .reviews-slider {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .rules-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .crowd-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 968px) {
+    .about-grid,
+    .booking-content,
+    .contact-content,
+    .trail-modal-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- ОБЩАЯ АДАПТАЦИЯ И ТЕКСТ --- */
+    .burger {
+        display: block;
+    }
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        background: rgba(11, 26, 46, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+    }
+    .nav-menu.active {
+        right: 0;
+    }
+    .container {
+        padding: 0rem;
+    }
+    .footer-links {
+        gap: 0.5rem;
+    }
+    .footer-links a {
+        font-size: 0.5rem;
+    }
+
+        /* --- 9. КОНТАКТЫ --- */
+    .contact-content {
+        grid-template-columns: 1fr 1fr; /* Текст и карта в 2 колонки */
+        gap: 1rem;
+        align-items: center;
+    }
+    .contact-info-text h3 {
+        font-size: 1rem; /* Уменьшаем заголовок */
+    }
+    .contact-info-text p {
+        font-size: 0.75rem; /* Уменьшаем текст */
+        line-height: 1.4;
+    }
+    .map-placeholder {
+        height: 200px; /* Карта поменьше, чтобы влезла в колонку */
+    }
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+    .hero-stats {
+        gap: 1rem;
+    }
+    .hero-stat-number {
+        font-size: 1.5rem;
+    }
+    .hero-stat-label {
+        font-size: 0.8rem;
+    }
+    .hero-cta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .btn {
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    .section-subtitle {
+        font-size: 0.8rem;
+    }
+    .about, .trails, .rules, .accommodation, .rental, .passes, .resort-map, .schedule, .events, .news, .reviews, .booking, .contact {
+        padding: 3rem 1rem; /* Уменьшили отступы */
+    }
+
+    /* --- 4. ПРАВИЛА КУРОРТА (ПО 2 В РЯД) --- */
+    .rules-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .rule-card {
+        padding: 1rem;
+    }
+    .rule-icon {
+        font-size: 2rem;
+    }
+    .rule-card h3 {
+        font-size: 1rem;
+    }
+    .rule-card p {
+        font-size: 0.8rem;
+    }
+
+    /* --- 5. СНАРЯЖЕНИЕ (ПО 2 В РЯД) --- */
+    .rental-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .rental-card {
+        padding: 1rem;
+    }
+    .rental-icon {
+        font-size: 2rem;
+    }
+    .rental-card h3 {
+        font-size: 1.1rem;
+    }
+    .rental-desc, .rental-features {
+        font-size: 0.75rem;
+    }
+    .rental-price {
+        font-size: 1.2rem;
+    }
+
+    /* --- 6. ТАРИФЫ (ПО 2 В РЯД) --- */
+    .pass-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .pass-card {
+        padding: 1rem;
+    }
+    .pass-card.popular {
+        transform: scale(1); /* Убираем увеличение, чтобы не вылезало */
+    }
+    .pass-header h4 {
+        font-size: 1.1rem;
+    }
+    .pass-price {
+        font-size: 1.5rem;
+    }
+    .pass-details p {
+        font-size: 0.8rem;
+    }
+    .pass-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.8rem;
+    }
+    .category-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* --- 7. ПРАЗДНИКИ (ПО 2 В РЯД) --- */
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .event-card {
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    .event-icon {
+        font-size: 2rem;
+        min-width: auto;
+    }
+    .event-content h3 {
+        font-size: 1rem;
+    }
+    .event-desc {
+        font-size: 0.75rem;
+    }
+
+    /* --- 8. НОВОСТИ (ПО 2 В РЯД) --- */
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .news-card {
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    .news-card::before {
+        display: none; /* Убираем полоску слева, так как карточка узкая */
+    }
+    .news-date {
+        justify-content: center;
+        min-width: auto;
+    }
+    .news-day {
+        font-size: 1.8rem;
+    }
+    .news-content h3 {
+        font-size: 1rem;
+    }
+    .news-preview {
+        font-size: 0.75rem;
+    }
+    .news-tags {
+        justify-content: center;
+    }
+    .news-tag {
+        font-size: 0.65rem;
+    }
+
+    /* --- 9. КОНТАКТЫ (ТЕКСТ СЛЕВА, КАРТА СПРАВА) --- */
+    .contact-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        align-items: start;
+    }
+    .info-items {
+        gap: 0.5rem;
+    }
+    .info-item {
+        flex-direction: column;
+        padding: 0.5rem;
+        text-align: center;
+        gap: 0.2rem;
+    }
+    .info-icon {
+        font-size: 1.5rem;
+        min-width: auto;
+    }
+    .info-item h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+    .info-item p {
+        font-size: 0.75rem;
+    }
+    .map-placeholder {
+        height: 250px; /* Уменьшили карту, чтобы влезла в колонку */
+    }
+    .map-placeholder .image-placeholder-large {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    /* --- ПРОЧИЕ СЕТКИ В 1 КОЛОНКУ --- */
+    .trail-cards,
+    .accommodation-grid,
+    .reviews-slider,
+    .schedule-grid,
+    .crowd-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-grid, .booking-content, .trail-modal-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .booking-two-columns {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: span 1;
+    }
+    .trail-modal-content {
+        padding: 1.5rem;
+        margin: 5% auto;
+    }
+    .trail-modal-main-image {
+        height: 200px;
+    }
+    .trail-modal-info h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .rules-grid, .rental-grid, .pass-grid, .events-grid, .news-grid, .contact-content {
+        gap: 0.5rem; /* Еще меньше отступы для самых узких экранов */
+    }
+    .rule-card, .rental-card, .pass-card, .event-card, .news-card {
+        padding: 0.8rem 0.5rem;
+    }
+    .info-item h4 {
+        font-size: 0.8rem;
+    }
+    .info-item p {
+        font-size: 0.7rem;
+    }
+}

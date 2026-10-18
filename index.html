@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnowPeak - Горнолыжный курорт</title>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#a8d8ff">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Снежный фон -->
+    <div class="snow-bg"></div>
+    
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">SNOWPEAK</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="active">Главная</a></li>
+            <li><a href="#about">О курорте</a></li>
+            <li><a href="#trails">Трассы</a></li>
+            <li><a href="#accommodation">Проживание</a></li>
+            <li><a href="#passes">Ски-пассы</a></li>
+            <li><a href="#booking">Бронирование</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Главный экран -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-label">WELCOME TO</span>
+            <h1 class="main-title">SNOW<span class="highlight">PEAK</span></h1>
+            <p class="hero-description">Первоклассный горнолыжный курорт с идеальными склонами и современной инфраструктурой</p>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">15</span>
+                    <span class="hero-stat-label">трасс</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">8</span>
+                    <span class="hero-stat-label">подъемников</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">2840м</span>
+                    <span class="hero-stat-label">высота</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">120</span>
+                    <span class="hero-stat-label">дней снега</span>
+                </div>
+            </div>
+            
+            <div class="hero-cta">
+                <a href="#booking" class="btn primary">Забронировать онлайн</a>
+                <a href="#about" class="btn secondary">Узнать больше</a>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <span>Листайте вниз</span>
+        </div>
+    </section>
+
+    <!-- О курорте -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-subtitle">О КУРОРТЕ</span>
+                    <h2 class="section-title">Идеальный снег в сердце гор</h2>
+                    <p class="about-text">Расположенный на высоте 2840 метров, SnowPeak предлагает незабываемые впечатления от катания на современных трассах различной сложности. Современная инфраструктура, опытные инструкторы и уютные шале ждут вас.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">🏔️</span>
+                            <div>
+                                <h4>Нетронутые склоны</h4>
+                                <p>Ежедневная подготовка трасс</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">⭐</span>
+                            <div>
+                                <h4>5-звездочный сервис</h4>
+                                <p>Отели и рестораны премиум-класса</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🚡</span>
+                            <div>
+                                <h4>Современные подъемники</h4>
+                                <p>Минимум очередей</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="image-grid">
+                        <div class="image-item">
+                            <div class="image-placeholder">Место для фото 1</div>
+                        </div>
+                        <div class="image-item">
+                            <div class="image-placeholder">Место для фото 2</div>
+                        </div>
+                        <div class="image-item">
+                            <div class="image-placeholder">Место для фото 3</div>
+                        </div>
+                        <div class="image-item">
+                            <div class="image-placeholder">Место для фото 4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Трассы -->
+    <section id="trails" class="trails">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">НАШИ ТРАССЫ</span>
+                <h2 class="section-title">Выберите свой уровень</h2>
+                <p class="trails-hint">Нажмите на карточку трассы, чтобы узнать подробную информацию</p>
+            </div>
+            
+            <div class="trail-cards">
+                <div class="card" data-difficulty="easy" data-trail="forest">
+                    <div class="card-image">
+                        <div class="difficulty-badge green">Зеленая</div>
+                        <div class="image-placeholder">Место для фото трассы "Лесная"</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Лесная</h3>
+                        <p>Идеальна для новичков и семейного катания</p>
+                        <div class="trail-stats">
+                            <span><span class="stat-icon">📏</span> 2.5 км</span>
+                            <span><span class="stat-icon">📈</span> 200 м</span>
+                            <span><span class="stat-icon">⏱️</span> 15 мин</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" data-difficulty="medium" data-trail="peak">
+                    <div class="card-image">
+                        <div class="difficulty-badge blue">Синяя</div>
+                        <div class="image-placeholder">Место для фото трассы "Вершина"</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Вершина</h3>
+                        <p>Средний уровень, отличные виды</p>
+                        <div class="trail-stats">
+                            <span><span class="stat-icon">📏</span> 3.2 км</span>
+                            <span><span class="stat-icon">📈</span> 450 м</span>
+                            <span><span class="stat-icon">⏱️</span> 20 мин</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" data-difficulty="hard" data-trail="extreme">
+                    <div class="card-image">
+                        <div class="difficulty-badge red">Красная</div>
+                        <div class="image-placeholder">Место для фото трассы "Экстрим"</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Экстрим</h3>
+                        <p>Для опытных лыжников и сноубордистов</p>
+                        <div class="trail-stats">
+                            <span><span class="stat-icon">📏</span> 2.8 км</span>
+                            <span><span class="stat-icon">📈</span> 580 м</span>
+                            <span><span class="stat-icon">⏱️</span> 18 мин</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" data-difficulty="expert" data-trail="dragon">
+                    <div class="card-image">
+                        <div class="difficulty-badge black">Черная</div>
+                        <div class="image-placeholder">Место для фото трассы "Черный дракон"</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Черный дракон</h3>
+                        <p>Только для профи!</p>
+                        <div class="trail-stats">
+                            <span><span class="stat-icon">📏</span> 1.9 км</span>
+                            <span><span class="stat-icon">📈</span> 620 м</span>
+                            <span><span class="stat-icon">⏱️</span> 12 мин</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно для трасс -->
+    <div id="trailModal" class="trail-modal">
+        <div class="trail-modal-content">
+            <span class="trail-modal-close">&times;</span>
+            <div class="trail-modal-grid">
+                <div class="trail-modal-images">
+                    <div class="trail-modal-main-image">
+                        <div class="image-placeholder-large">Место для главного фото трассы</div>
+                    </div>
+                    <div class="trail-modal-thumbnails">
+                        <div class="thumbnail">
+                            <div class="image-placeholder-small">Фото 1</div>
+                        </div>
+                        <div class="thumbnail">
+                            <div class="image-placeholder-small">Фото 2</div>
+                        </div>
+                        <div class="thumbnail">
+                            <div class="image-placeholder-small">Фото 3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="trail-modal-info">
+                    <h2 id="modalTrailName">Название трассы</h2>
+                    <div class="trail-modal-badge" id="modalTrailDifficulty">Сложность</div>
+                    
+                    <div class="trail-modal-details">
+                        <div class="trail-modal-detail">
+                            <span class="detail-label">Длина:</span>
+                            <span class="detail-value" id="modalTrailLength">2.5 км</span>
+                        </div>
+                        <div class="trail-modal-detail">
+                            <span class="detail-label">Перепад высот:</span>
+                            <span class="detail-value" id="modalTrailDrop">200 м</span>
+                        </div>
+                        <div class="trail-modal-detail">
+                            <span class="detail-label">Время спуска:</span>
+                            <span class="detail-value" id="modalTrailTime">15 мин</span>
+                        </div>
+                        <div class="trail-modal-detail">
+                            <span class="detail-label">Макс. уклон:</span>
+                            <span class="detail-value" id="modalTrailSteepness">25°</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trail-modal-description" id="modalTrailDescription">
+                        Подробное описание трассы будет здесь. Информация о рельефе, особенностях катания, рекомендации для райдеров.
+                    </div>
+                    
+                    <div class="trail-modal-features">
+                        <h4>Особенности трассы:</h4>
+                        <ul id="modalTrailFeatures">
+                            <li>✓ Искусственное оснежение</li>
+                            <li>✓ Ночное освещение</li>
+                            <li>✓ Видеонаблюдение</li>
+                            <li>✓ Спасательная служба</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Правила курорта -->
+    <section id="rules" class="rules">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">БЕЗОПАСНОСТЬ</span>
+                <h2 class="section-title">Правила курорта</h2>
+            </div>
+            
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <div class="rule-icon">⛑️</div>
+                    <h3>Обязательная защита</h3>
+                    <p>Шлем обязателен для детей до 12 лет и рекомендуется для всех</p>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-icon">⚠️</div>
+                    <h3>Скоростной режим</h3>
+                    <p>Соблюдайте скоростной режим на трассах, учитывайте свою подготовку</p>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-icon">🚡</div>
+                    <h3>Подъемники</h3>
+                    <p>Запрещено раскачивать кресла и вставать до полной остановки</p>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-icon">🏔️</div>
+                    <h3>Вне трасс</h3>
+                    <p>Катание вне трасс только с гидом и лавинным снаряжением</p>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-icon">🍷</div>
+                    <h3>Алкоголь</h3>
+                    <p>Запрещено катание в состоянии алкогольного опьянения</p>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-icon">🆘</div>
+                    <h3>Экстренные случаи</h3>
+                    <p>Телефон спасательной службы: +7 (999) 123-45-67</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Проживание -->
+    <section id="accommodation" class="accommodation">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">ПРОЖИВАНИЕ</span>
+                <h2 class="section-title">Выберите свой уют</h2>
+                <p class="trails-hint">Нажмите на карточку проживания, чтобы узнать подробную информацию</p>
+            </div>
+            
+            <div class="accommodation-grid">
+                <div class="accommodation-card" data-accommodation="hotel">
+                    <div class="accommodation-image">
+                        <div class="image-placeholder">Отель "Вершина"</div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Отель "Вершина"</h3>
+                        <p class="accommodation-location">📍 У подъемника, 50 м</p>
+                        <p class="accommodation-price">от 5 500 ₽/ночь</p>
+                    </div>
+                </div>
+                
+                <div class="accommodation-card" data-accommodation="chalet">
+                    <div class="accommodation-image">
+                        <div class="image-placeholder">Шале "Лесное"</div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Шале "Лесное"</h3>
+                        <p class="accommodation-location">📍 200 м от подъемника</p>
+                        <p class="accommodation-price">от 8 500 ₽/ночь</p>
+                    </div>
+                </div>
+                
+                <div class="accommodation-card" data-accommodation="apart">
+                    <div class="accommodation-image">
+                        <div class="image-placeholder">Апартаменты "Снежинка"</div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Апартаменты "Снежинка"</h3>
+                        <p class="accommodation-location">📍 5 мин пешком</p>
+                        <p class="accommodation-price">от 3 200 ₽/ночь</p>
+                    </div>
+                </div>
+                
+                <div class="accommodation-card" data-accommodation="vip">
+                    <div class="accommodation-image">
+                        <div class="image-placeholder">VIP-резиденция</div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>VIP-резиденция</h3>
+                        <p class="accommodation-location">📍 Прямой выход на склон</p>
+                        <p class="accommodation-price">от 25 000 ₽/ночь</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно для проживания -->
+    <div id="accommodationModal" class="trail-modal">
+        <div class="trail-modal-content">
+            <span class="trail-modal-close" onclick="closeAccommodationModal()">&times;</span>
+            <div class="trail-modal-grid">
+                <div class="trail-modal-images">
+                    <div class="trail-modal-main-image">
+                        <div class="image-placeholder-large">Фото отеля</div>
+                    </div>
+                    <div class="trail-modal-thumbnails">
+                        <div class="thumbnail">
+                            <div class="image-placeholder-small">Фото 1</div>
+                        </div>
+                        <div class="thumbnail">
+                            <div class="image-placeholder-small">Фото 2</div>
+                        </div>
+                        <div class="thumbnail">
+                            <div class="image-placeholder-small">Фото 3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="trail-modal-info">
+                    <h2 id="modalAccommodationName">Название отеля</h2>
+                    <div class="trail-modal-details">
+                        <div class="trail-modal-detail">
+                            <span class="detail-label">⭐ Рейтинг:</span>
+                            <span class="detail-value" id="modalAccommodationRating">4.8</span>
+                        </div>
+                        <div class="trail-modal-detail">
+                            <span class="detail-label">🛏️ Номера:</span>
+                            <span class="detail-value" id="modalAccommodationRooms">45</span>
+                        </div>
+                        <div class="trail-modal-detail">
+                            <span class="detail-label">🍳 Питание:</span>
+                            <span class="detail-value" id="modalAccommodationMeal">Завтрак</span>
+                        </div>
+                        <div class="trail-modal-detail">
+                            <span class="detail-label">👥 Вместимость:</span>
+                            <span class="detail-value" id="modalAccommodationCapacity">2-4 чел</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trail-modal-description" id="modalAccommodationDescription">
+                        Подробное описание отеля
+                    </div>
+                    
+                    <div class="trail-modal-features">
+                        <h4>Удобства:</h4>
+                        <ul id="modalAccommodationFeatures">
+                            <li>✓ Бесплатный Wi-Fi</li>
+                            <li>✓ Парковка</li>
+                            <li>✓ Ресторан</li>
+                            <li>✓ СПА-центр</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="accommodation-modal-price" id="modalAccommodationPrice">от 5 500 ₽/ночь</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Прокат снаряжения -->
+    <section id="rental" class="rental">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">ПРОКАТ</span>
+                <h2 class="section-title">Снаряжение премиум-класса</h2>
+            </div>
+            
+            <div class="rental-grid">
+                <div class="rental-card">
+                    <div class="rental-icon">⛷️</div>
+                    <h3>Горные лыжи</h3>
+                    <p class="rental-desc">Комплект: лыжи, палки, крепления</p>
+                    <div class="rental-features">
+                        <span>Atomic, Rossignol</span>
+                        <span>2024 модель</span>
+                    </div>
+                    <p class="rental-price">от 1 500 ₽/день</p>
+                </div>
+                
+                <div class="rental-card">
+                    <div class="rental-icon">🏂</div>
+                    <h3>Сноуборд</h3>
+                    <p class="rental-desc">Доска + крепления</p>
+                    <div class="rental-features">
+                        <span>Burton, Jones</span>
+                        <span>2024 модель</span>
+                    </div>
+                    <p class="rental-price">от 1 400 ₽/день</p>
+                </div>
+                
+                <div class="rental-card">
+                    <div class="rental-icon">🧥</div>
+                    <h3>Одежда</h3>
+                    <p class="rental-desc">Куртка, штаны, перчатки</p>
+                    <div class="rental-features">
+                        <span>The North Face</span>
+                        <span>Размеры S-XL</span>
+                    </div>
+                    <p class="rental-price">от 2 000 ₽/день</p>
+                </div>
+                
+                <div class="rental-card">
+                    <div class="rental-icon">⛑️</div>
+                    <h3>Защита</h3>
+                    <p class="rental-desc">Шлем, маска, защита спины</p>
+                    <div class="rental-features">
+                        <span>POC, Sweet</span>
+                        <span>Полная защита</span>
+                    </div>
+                    <p class="rental-price">от 800 ₽/день</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ски-пассы -->
+    <section id="passes" class="passes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">СКИ-ПАССЫ</span>
+                <h2 class="section-title">Выберите тариф</h2>
+            </div>
+            
+            <!-- По времени -->
+            <div class="pass-category">
+                <h3 class="category-title">По времени катания</h3>
+                <div class="pass-grid">
+                    <div class="pass-card">
+                        <div class="pass-header">
+                            <h4>Утренний</h4>
+                            <div class="pass-price">1 500 ₽</div>
+                        </div>
+                        <div class="pass-details">
+                            <p>09:00 - 13:00</p>
+                            <p>Все подъемники</p>
+                            <p class="pass-note">Без обеда</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pass-card popular">
+                        <div class="pass-badge">Популярный</div>
+                        <div class="pass-header">
+                            <h4>Дневной</h4>
+                            <div class="pass-price">2 500 ₽</div>
+                        </div>
+                        <div class="pass-details">
+                            <p>09:00 - 17:00</p>
+                            <p>Все подъемники</p>
+                            <p class="pass-note">Обед включен</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pass-card">
+                        <div class="pass-header">
+                            <h4>Вечерний</h4>
+                            <div class="pass-price">1 200 ₽</div>
+                        </div>
+                        <div class="pass-details">
+                            <p>17:00 - 22:00</p>
+                            <p>3 подъемника</p>
+                            <p class="pass-note">Ночное катание</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pass-card">
+                        <div class="pass-header">
+                            <h4>Дневной +</h4>
+                            <div class="pass-price">3 500 ₽</div>
+                        </div>
+                        <div class="pass-details">
+                            <p>09:00 - 22:00</p>
+                            <p>Все подъемники</p>
+                            <p class="pass-note">Обед + ужин</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- По количеству подъемов -->
+            <div class="pass-category">
+                <h3 class="category-title">По количеству подъемов</h3>
+                <div class="pass-grid">
+                    <div class="pass-card lift-pass">
+                        <div class="pass-header">
+                            <h4>Старт</h4>
+                            <div class="pass-price">1 000 ₽</div>
+                        </div>
+                        <div class="pass-details">
+                            <p>10 подъемов</p>
+                            <p>Без ограничений</p>
+                            <p class="pass-note">На 1 день</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pass-card lift-pass">
+                        <div class="pass-header">
+                            <h4>Оптимальный</h4>
+                            <div class="pass-price">2 500 ₽</div>
+                        </div>
+                        <div class="pass-details">
+                            <p>30 подъемов</p>
+                            <p>Без ограничений</p>
+                            <p class="pass-note">На 3 дня</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pass-card lift-pass popular">
+                        <div class="pass-badge">Выгодно</div>
+                        <div class="pass-header">
+                            <h4>Максимум</h4>
+                            <div class="pass-price">4 500 ₽</div>
+                        </div>
+                        <div class="pass-details">
+                            <p>60 подъемов</p>
+                            <p>Без ограничений</p>
+                            <p class="pass-note">На 5 дней</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pass-card lift-pass">
+                        <div class="pass-header">
+                            <h4>Безлимитный</h4>
+                            <div class="pass-price">8 900 ₽</div>
+                        </div>
+                        <div class="pass-details">
+                            <p>Безлимит</p>
+                            <p>7 дней</p>
+                            <p class="pass-note">Лучшая цена</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Схема курорта -->
+    <section id="map" class="resort-map">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">СХЕМА КУРОРТА</span>
+                <h2 class="section-title">Карта трасс и подъемников</h2>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder-large">
+                    <div class="image-placeholder-large">Схема курорта с трассами и подъемниками</div>
+                </div>
+                
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-color green"></span>
+                        <span>Зеленые трассы - для новичков</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color blue"></span>
+                        <span>Синие трассы - средний уровень</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color red"></span>
+                        <span>Красные трассы - сложные</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color black"></span>
+                        <span>Черные трассы - для экспертов</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">🚡</span>
+                        <span>Подъемники</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">🍽️</span>
+                        <span>Кафе и рестораны</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Режим работы склонов -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">РЕЖИМ РАБОТЫ</span>
+                <h2 class="section-title">Время работы склонов и подъемников</h2>
+            </div>
+            
+            <div class="schedule-grid">
+                <!-- Будни -->
+                <div class="schedule-card">
+                    <div class="schedule-header">
+                        <span class="schedule-day">Будние дни</span>
+                        <span class="schedule-badge">Пн - Пт</span>
+                    </div>
+                    <div class="schedule-content">
+                        <div class="schedule-item">
+                            <span class="schedule-label">🕒 Подъемники:</span>
+                            <span class="schedule-time">09:00 - 22:00</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">⛷️ Трассы:</span>
+                            <span class="schedule-time">09:00 - 22:00</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">🌙 Ночное катание:</span>
+                            <span class="schedule-time">20:00 - 22:00</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">🚡 Технический перерыв:</span>
+                            <span class="schedule-time">13:00 - 13:30</span>
+                        </div>
+                    </div>
+                    <div class="schedule-note">
+                        <span class="note-icon">ℹ️</span>
+                        <span>Подъемники работают без выходных</span>
+                    </div>
+                </div>
+                
+                <!-- Выходные -->
+                <div class="schedule-card weekend">
+                    <div class="schedule-header">
+                        <span class="schedule-day">Выходные и праздники</span>
+                        <span class="schedule-badge">Сб - Вс</span>
+                    </div>
+                    <div class="schedule-content">
+                        <div class="schedule-item">
+                            <span class="schedule-label">🕒 Подъемники:</span>
+                            <span class="schedule-time">08:00 - 23:00</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">⛷️ Трассы:</span>
+                            <span class="schedule-time">08:00 - 23:00</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">🌙 Ночное катание:</span>
+                            <span class="schedule-time">19:00 - 23:00</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">🚡 Технический перерыв:</span>
+                            <span class="schedule-time">Без перерыва</span>
+                        </div>
+                    </div>
+                    <div class="schedule-note">
+                        <span class="note-icon">🎿</span>
+                        <span>Увеличенное время катания</span>
+                    </div>
+                </div>
+                
+                <!-- Дополнительная информация -->
+                <div class="schedule-card special">
+                    <div class="schedule-header">
+                        <span class="schedule-day">Специальные часы</span>
+                        <span class="schedule-badge">Premium</span>
+                    </div>
+                    <div class="schedule-content">
+                        <div class="schedule-item">
+                            <span class="schedule-label">🌅 Раннее катание:</span>
+                            <span class="schedule-time">07:00 - 09:00</span>
+                            <span class="schedule-tag">по запросу</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">🌌 Ночное катание (пт-сб):</span>
+                            <span class="schedule-time">22:00 - 02:00</span>
+                            <span class="schedule-tag">только для опытных</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">🎿 Детские трассы:</span>
+                            <span class="schedule-time">09:00 - 20:00</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">🏂 Сноупарк:</span>
+                            <span class="schedule-time">10:00 - 22:00</span>
+                        </div>
+                    </div>
+                    <div class="schedule-note">
+                        <span class="note-icon">⭐</span>
+                        <span>VIP-часы доступны для владельцев Premium-карт</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Дополнительная информация о загруженности -->
+            <div class="schedule-extra">
+                <h3>Рекомендации по времени посещения</h3>
+                <div class="crowd-grid">
+                    <div class="crowd-item">
+                        <span class="crowd-time">09:00 - 11:00</span>
+                        <span class="crowd-level low">🟢 Мало людей</span>
+                        <span class="crowd-desc">Лучшее время для спокойного катания</span>
+                    </div>
+                    <div class="crowd-item">
+                        <span class="crowd-time">11:00 - 14:00</span>
+                        <span class="crowd-level medium">🟡 Средняя загрузка</span>
+                        <span class="crowd-desc">Обеденное время, небольшие очереди</span>
+                    </div>
+                    <div class="crowd-item">
+                        <span class="crowd-time">14:00 - 17:00</span>
+                        <span class="crowd-level high">🔴 Пиковая нагрузка</span>
+                        <span class="crowd-desc">Максимальное количество посетителей</span>
+                    </div>
+                    <div class="crowd-item">
+                        <span class="crowd-time">17:00 - 20:00</span>
+                        <span class="crowd-level medium">🟡 Средняя загрузка</span>
+                        <span class="crowd-desc">Вечернее катание, людей меньше</span>
+                    </div>
+                    <div class="crowd-item">
+                        <span class="crowd-time">20:00 - 22:00</span>
+                        <span class="crowd-level low">🟢 Мало людей</span>
+                        <span class="crowd-desc">Ночное катание, особая атмосфера</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="schedule-footer">
+                <p class="schedule-disclaimer">
+                    ⚠️ Режим работы может меняться в зависимости от погодных условий и технического состояния трасс.
+                    Актуальная информация доступна в разделе "Новости" и по телефону службы поддержки.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Праздники и события -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">СОБЫТИЯ</span>
+                <h2 class="section-title">Организуйте свой праздник</h2>
+            </div>
+            
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-icon">🎂</div>
+                    <div class="event-content">
+                        <h3>День рождения</h3>
+                        <p class="event-desc">Отпразднуйте день рождения на высоте 2840 метров! Индивидуальная программа, торт от шеф-кондитера, шампанское и подъемник в подарок имениннику.</p>
+                        <a href="#booking" class="event-link">Заказать праздник →</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon">💍</div>
+                    <div class="event-content">
+                        <h3>Свадьба в горах</h3>
+                        <p class="event-desc">Незабываемая церемония бракосочетания на фоне заснеженных вершин. Организация под ключ: фотограф, ведущий, банкет в шале.</p>
+                        <a href="#booking" class="event-link">Заказать праздник →</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon">👔</div>
+                    <div class="event-content">
+                        <h3>Корпоратив</h3>
+                        <p class="event-desc">Проведите тимбилдинг на склоне! Командные соревнования, афтепати в ресторане, трансфер для сотрудников.</p>
+                        <a href="#booking" class="event-link">Заказать праздник →</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon">🎓</div>
+                    <div class="event-content">
+                        <h3>Выпускной</h3>
+                        <p class="event-desc">Яркий выпускной в горах. Специальные тарифы для школьников и студентов, дискотека на склоне, фейерверк.</p>
+                        <a href="#booking" class="event-link">Заказать праздник →</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon">💑</div>
+                    <div class="event-content">
+                        <h3>Годовщина</h3>
+                        <p class="event-desc">Романтический вечер для двоих: ужин при свечах, спа-процедуры, прогулка на снегоступах при луне.</p>
+                        <a href="#booking" class="event-link">Заказать праздник →</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon">👶</div>
+                    <div class="event-content">
+                        <h3>Детский праздник</h3>
+                        <p class="event-desc">Аниматоры, снежные горки, уроки катания с инструктором, сладкий стол и подарки для маленьких гостей.</p>
+                        <a href="#booking" class="event-link">Заказать праздник →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВОСТИ И АКЦИИ -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">НОВОСТИ</span>
+                <h2 class="section-title">Будьте в курсе событий</h2>
+                <p class="news-hint">Акции, спецпредложения и новости курорта</p>
+            </div>
+            
+            <div class="news-grid">
+                <!-- Новость 1 -->
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="news-day">15</span>
+                        <span class="news-month">МАР</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Открытие ночного катания</h3>
+                        <p class="news-preview">С 20 марта все трассы работают до 23:00. Подсветка, музыка, горячий шоколад на вершине.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#новости</span>
+                            <span class="news-tag">#ночноекатание</span>
+                        </div>
+                        <a href="#contact" class="news-link">Подробнее →</a>
+                    </div>
+                </div>
+                
+                <!-- Новость 2 -->
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="news-day">10</span>
+                        <span class="news-month">МАР</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Скидка 20% на ски-пассы</h3>
+                        <p class="news-preview">Только до конца марта! При покупке онлайн скидка 20% на дневные ски-пассы.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#акция</span>
+                            <span class="news-tag">#скидки</span>
+                        </div>
+                        <a href="#contact" class="news-link">Подробнее →</a>
+                    </div>
+                </div>
+                
+                <!-- Новость 3 -->
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="news-day">05</span>
+                        <span class="news-month">МАР</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Новый сноупарк</h3>
+                        <p class="news-preview">Открытие обновленного сноупарка с трамплинами, перилами и биг-эйром для профессионалов.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#сноупарк</span>
+                            <span class="news-tag">#новинка</span>
+                        </div>
+                        <a href="#contact" class="news-link">Подробнее →</a>
+                    </div>
+                </div>
+                
+                <!-- Новость 4 -->
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="news-day">01</span>
+                        <span class="news-month">МАР</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Детская школа инструкторов</h3>
+                        <p class="news-preview">Набор в группы для детей 4-12 лет. Индивидуальный подход, безопасность и веселье.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">#дети</span>
+                            <span class="news-tag">#обучение</span>
+                        </div>
+                        <a href="#contact" class="news-link">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы клиентов -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">ОТЗЫВЫ</span>
+                <h2 class="section-title">Что говорят гости</h2>
+            </div>
+            
+            <div class="reviews-slider">
+                <div class="review-card">
+                    <p class="review-text">"Отличный курорт! Трассы разнообразные, подъемники новые, очередей почти нет. Обязательно вернемся всей семьей! Отдельное спасибо инструктору Дмитрию - поставил на лыжи за 2 дня."</p>
+                    <div class="review-author">
+                        <span class="author-name">Анна Смирнова</span>
+                        <span class="review-date">Февраль 2024</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <p class="review-text">"Брали сноуборды в прокате - отличное состояние, современные модели Burton. Жили в шале Лесное - потрясающий вид из окна, камин, очень уютно. Ресторан наверху готовит великолепно."</p>
+                    <div class="review-author">
+                        <span class="author-name">Дмитрий Козлов</span>
+                        <span class="review-date">Январь 2024</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <p class="review-text">"Праздновали день рождения компании. Организовали классный тимбилдинг на склоне, потом банкет в ресторане. Все на высшем уровне! Спасибо команде SnowPeak за незабываемый отдых."</p>
+                    <div class="review-author">
+                        <span class="author-name">Елена Волкова</span>
+                        <span class="review-date">Март 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Онлайн-бронирование -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="booking-content">
+                <div class="booking-info">
+                    <span class="section-subtitle">ОНЛАЙН-БРОНИРОВАНИЕ</span>
+                    <h2 class="section-title">Забронируйте отдых прямо сейчас</h2>
+                    <p class="booking-text">Заполните форму и мы подберем для вас лучший вариант отдыха. Обязательные поля слева, дополнительные услуги справа.</p>
+                </div>
+                
+                <div class="booking-form">
+                    <form id="onlineBooking">
+                        <div class="booking-two-columns">
+                            <!-- Левая колонка - обязательные поля -->
+                            <div class="booking-column left-column">
+                                <h4 class="column-title">Контактная информация</h4>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Ваше имя *" required style="color: white; background: rgba(255,255,255,0.1);">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Телефон *" required style="color: white; background: rgba(255,255,255,0.1);">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email *" required style="color: white; background: rgba(255,255,255,0.1);">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="date" placeholder="Дата заезда *" required style="color: white; background: rgba(255,255,255,0.1);">
+                                </div>
+                            </div>
+                            
+                            <!-- Правая колонка - дополнительные услуги -->
+                            <div class="booking-column right-column">
+                                <h4 class="column-title">Дополнительные услуги</h4>
+                                
+                                <div class="form-group">
+                                    <select style="color: white; background: rgba(255,255,255,0.15); border: 1px solid #a8d8ff;">
+                                        <option value="" disabled selected style="color: rgba(255,255,255,0.7); background: #1c3a5f;">🏂 Прокат снаряжения</option>
+                                        <option value="skis" style="color: white; background: #1c3a5f;">⛷️ Горные лыжи (1 500₽/день)</option>
+                                        <option value="board" style="color: white; background: #1c3a5f;">🏂 Сноуборд (1 400₽/день)</option>
+                                        <option value="clothes" style="color: white; background: #1c3a5f;">🧥 Одежда (2 000₽/день)</option>
+                                        <option value="protection" style="color: white; background: #1c3a5f;">⛑️ Защита (800₽/день)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select style="color: white; background: rgba(255,255,255,0.15); border: 1px solid #a8d8ff;">
+                                        <option value="" disabled selected style="color: rgba(255,255,255,0.7); background: #1c3a5f;">🎫 Ски-пасс</option>
+                                        <option value="morning" style="color: white; background: #1c3a5f;">🌅 Утренний (1 500₽)</option>
+                                        <option value="day" style="color: white; background: #1c3a5f;">☀️ Дневной (2 500₽)</option>
+                                        <option value="evening" style="color: white; background: #1c3a5f;">🌙 Вечерний (1 200₽)</option>
+                                        <option value="unlimited" style="color: white; background: #1c3a5f;">∞ Безлимитный (8 900₽)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select style="color: white; background: rgba(255,255,255,0.15); border: 1px solid #a8d8ff;">
+                                        <option value="" disabled selected style="color: rgba(255,255,255,0.7); background: #1c3a5f;">🏨 Проживание</option>
+                                        <option value="hotel" style="color: white; background: #1c3a5f;">🏨 Отель Вершина (от 5 500₽)</option>
+                                        <option value="chalet" style="color: white; background: #1c3a5f;">🏠 Шале Лесное (от 8 500₽)</option>
+                                        <option value="apart" style="color: white; background: #1c3a5f;">🏢 Апартаменты (от 3 200₽)</option>
+                                        <option value="vip" style="color: white; background: #1c3a5f;">👑 VIP-резиденция (от 25 000₽)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select id="eventSelect" style="color: white; background: rgba(255,255,255,0.15); border: 1px solid #a8d8ff;">
+                                        <option value="" disabled selected style="color: rgba(255,255,255,0.7); background: #1c3a5f;">🎉 Организовать праздник</option>
+                                        <option value="birthday" style="color: white; background: #1c3a5f;">🎂 День рождения</option>
+                                        <option value="wedding" style="color: white; background: #1c3a5f;">💍 Свадьба</option>
+                                        <option value="corporate" style="color: white; background: #1c3a5f;">👔 Корпоратив</option>
+                                        <option value="graduation" style="color: white; background: #1c3a5f;">🎓 Выпускной</option>
+                                        <option value="anniversary" style="color: white; background: #1c3a5f;">💑 Годовщина</option>
+                                        <option value="newyear" style="color: white; background: #1c3a5f;">🎄 Новый год</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Дополнительные поля для праздника (появляются при выборе) -->
+                                <div id="eventDetails" style="display: none;">
+                                    <div class="form-group">
+                                        <input type="number" id="guestsCount" placeholder="Количество гостей" min="1" style="color: white; background: rgba(255,255,255,0.1);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" id="eventDate" placeholder="Дата мероприятия" style="color: white; background: rgba(255,255,255,0.1);">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Широкое поле для дополнительных пожеланий -->
+                        <div class="form-group full-width">
+                            <textarea placeholder="Дополнительные пожелания (особые требования, пожелания по питанию, трансферу, декору и т.д.)" rows="4" style="color: white; background: rgba(255,255,255,0.1); width: 100%;"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn primary booking-submit">Забронировать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">КОНТАКТЫ</span>
+                <h2 class="section-title">Как нас найти</h2>
+            </div>
+            
+            <div class="contact-content">
+                <!-- Блок с текстом (слева) -->
+                <div class="contact-info-text">
+                    <h3>Красная Поляна, Сочи, Россия</h3>
+                    <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
+                    <p><strong>Email:</strong> info@snowpeak.ru</p>
+                    <p><strong>Часы работы:</strong><br>Подъемники: 09:00 - 22:00</p>
+                </div>
+                
+                <!-- Блок с картой (справа) -->
+                <div class="contact-map">
+                    <div class="map-placeholder">
+                        <div class="image-placeholder-large">Карта проезда</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">SNOWPEAK</div>
+                <div class="footer-links">
+                    <a href="#home">Главная</a>
+                    <a href="#trails">Трассы</a>
+                    <a href="#accommodation">Проживание</a>
+                    <a href="#passes">Ски-пассы</a>
+                    <a href="#booking">Бронирование</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.4 5.6 20 7.6 20h8.8c2 0 3.6-1.6 3.6-3.6V7.6C20 5.6 18.4 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zm0 2c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M8 2h8c3.3 0 6 2.7 6 6v8c0 3.3-2.7 6-6 6H8c-3.3 0-6-2.7-6-6V8c0-3.3 2.7-6 6-6zm13 6c0-2.8-2.2-5-5-5H8c-2.8 0-5 2.2-5 5v8c0 2.8 2.2 5 5 5h8c2.8 0 5-2.2 5-5V8zM7 9c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H9c-1.1 0-2-.9-2-2V9zm2 0v6h6V9H9z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 SnowPeak. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

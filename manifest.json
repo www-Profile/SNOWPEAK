@@ -1,0 +1,12 @@
+{
+  "name": "SnowPeak — Горнолыжный курорт",
+  "short_name": "SnowPeak",
+  "description": "Первоклассный горнолыжный курорт с идеальными склонами и современной инфраструктурой.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1a2e",
+  "theme_color": "#a8d8ff",
+  "lang": "ru",
+  "dir": "ltr"
+}
